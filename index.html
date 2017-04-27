@@ -8,47 +8,107 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/hangman.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Graduate" rel="stylesheet">
+	
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Croissant+One" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+
 </head>
 <body>
 
 
 <div id="gbl-container">
-	<h1 id="page-title">Hangman Game</h1>
+	<h1 id="page-title">Hangman <span>( Triple Crown Edition )</span></h1>
+	<h2 class="subheadline">Guess the word to win the race! </h2>
+	<h2 class="subheadline">Press any key to start.</h2>
 
 	<!-- New Game Button -->
 		<button type="button" id="new-game-button">new game</button>
 
+	<!-- Instructions -->
+		<!-- <div id="instructions-container" class="container instructions">
+			<h2>How to Play:</h2>
+			<h3>Guess the word to win the Triple Crown!</h3>
+			<p>- Press any key to start!</p>
+		</div> -->
+
+
 	<!-- Hangman Graphics -->
 		<div id="hangman" class="container">
-			<h2>Hangman:</h2>
-			<img src="assets/images/1_a.svg" id="img1" class="hangman-img">
-			<img src="assets/images/2_a.svg" id="img2" class="hangman-img">
-			<img src="assets/images/3_a.svg" id="img3" class="hangman-img">
-			<img src="assets/images/4_a.svg" id="img4" class="hangman-img">
-			<img src="assets/images/5_a.svg" id="img5" class="hangman-img">
-			<img src="assets/images/6_a.svg" id="img6" class="hangman-img">
-		</div>
+			<!-- <h2>Hangman:</h2> -->
 
-	<!-- guesses left counter -->
-		<div id="strikes-left" class="container">
-			<h2>Strikes Left:</h2>
-			<div class="content-wrap">
-				<h3 id="strike-counter"></h3>
+		<!-- Players -->
+			<div id="player-wrap" class="player-wrap">
+				<div class="lane" id="lane1">
+					<img src="assets/images/horse-red.png" id="user" class="graphic char user">
+					<!-- <span class="lane-decoration"></span> -->
+					<img class="lane-decoration" src="assets/images/wave1ds.svg"></span>
+					<!-- <img class="lane-decoration backing" src="assets/images/wave1ds.svg"></span> -->
+					</div>
+
+				<div class="lane" id="lane2">
+					<img src="assets/images/horse-dark-grey.png" id="cpu1" class="graphic char cpu">
+					<!-- <span class="lane-decoration alternate"></span> -->
+					<img class="lane-decoration" src="assets/images/wave2ds.svg"></span>
+					<!-- <img class="lane-decoration backing" src="assets/images/wave2ds.svg"></span> -->
+					</div>
+				<div class="lane" id="lane3">
+					<img src="assets/images/horse-dark-grey.png" id="cpu2" class="graphic char cpu">
+					<!-- <span class="lane-decoration"></span> -->
+					<img class="lane-decoration" src="assets/images/wave1ds.svg"></span>
+					<!-- <img class="lane-decoration backing" src="assets/images/wave1ds.svg"></span> -->
+					</div>
+				<div class="lane" id="lane4">
+					<img src="assets/images/horse-dark-grey.png" id="cpu3" class="graphic char cpu">
+					<!-- <span class="lane-decoration alternate"></span> -->
+					<img class="lane-decoration" src="assets/images/wave2ds.svg"></span>
+					<!-- <img class="lane-decoration backing" src="assets/images/wave2ds.svg"></span> -->
+					</div>
 			</div>
 		</div>
 
 	<!-- letter board -->
-		<div id="ltr-board" class="container">
-			<h2>Letter Board:</h2>
-			<div id="ltr-board-wrap" class="content-wrap"></div>
+		<div id="ltr-board" class="ltr-board container">
+			<h2>Scoreboard:</h2>
+			<div id="ltr-board-wrap" class="ltr-board-wrap content-wrap"> </div>
 		</div>
+
+
+
+
+	<!-- Strikes left counter -->
+		<div class="container scoreboard strikes-left">
+			<div id="strikes-left" class="scoreboard-section strikes-left centered">
+				<h2>Strikes Left:</h2>
+				<h3 id="strike-counter"></h3>
+				</div>
+
+			<div id="win-total" class="scoreboard-section strikes-left centered">
+				<!-- <div class="content-wrap"> -->
+					<!-- <h3 id="strike-counter"></h3> -->
+				<!-- </div> -->
+				<h2>Wins: </h2>
+				<h3 id="win-counter">0</h3>
+				</div>
+		</div>
+
 
 
 	<!-- Wrong Letters -->
-		<div id="wrong-ltrs" class="container">
-			<h2>Wrong Guesses:</h2>
-			<div id="wrong-ltr-wrap" class="content-wrap"></div>
+		<div id="wrong-ltrs" class="ltr-board container">
+			<h2>Guesses:</h2>
+			<div id="wrong-ltr-wrap" class="ltr-board-wrap content-wrap"></div>
 		</div>
+
 
 
  </div> <!-- end gbl-container -->

@@ -4,20 +4,54 @@
 /*#ltr-board { outline: 2px solid blue; }*/
 /*#guesses-left { outline: 2px solid yellow; }*/
 /*#wrong-ltrs { outline: 2px solid red; }*/
+/*.scoreboard-section { outline: 2px solid red; }*/
+
 
 /* General Styling -----*/
 	html {
 		font-family: 'courier new','courier',monospace;
 		font-family: 'Helvetica Neue',Roboto,Helvetica, Arial, sans-serif;
+		/*text-transform: uppercase;*/
 
 	}
+	body {
+		/*background-color: #fdebb5;*/
+	}
 	#page-title {
-		font-size: 48px;
-		font-weight: bold;
+		font-size: 70px;
+		line-height: 1em;
 		width: 100%;
 		text-align: center;
-		font-family: 'Helvetica Neue',Helvetica, Arial, sans-serif;
-		padding: 20px;
+		font-family: Roboto; 
+		/*font-family: 'Roboto Mono';*/
+		font-weight: 900;
+		letter-spacing: -1px;
+		padding: 20px 0;
+		text-transform: uppercase;
+		margin-bottom: 15px;
+		display: inline-block;
+		text-align: left;
+		/*width: initial;*/
+	}
+	#page-title span {
+		display: inline-block;
+		font-size: 30px;
+		text-transform: none;
+		font-weight: normal;
+		font-family: 'rock salt';
+		color: #e74c3c;
+		width: initial;
+		height: inherit;
+		line-height: inherit;
+		float: right;
+	}
+	.subheadline {
+		font-size: 24px;
+		font-family: 'cutive mono';
+		width: 60%;
+		margin: 0;
+		text-align: left;
+		display: inline-block;
 	}
 	h2 {
 		font-size: 18px;
@@ -25,22 +59,36 @@
 		/*text-transform: uppercase;*/
 		margin: 10px 30px;
 		display: inline-block;
+		position: relative;
 	}
 	h3 {
 		display: inline-block;
 	}
 	button {
-		font-size: 24px;
+		font-size: 20px;
+		min-height: initial;
 		height: 3em;
-		width: 50%;
-		margin: 0 25%;
-		background-color: #333;
+		line-height: 3em;
+		min-width: initial;
+		width: initial;
+		padding: 0 1em;
+		/*margin: 1em;*/
+		background-color: #2980b9;
 		color: #fff;
 		cursor: pointer;
 		outline: none;
 		text-transform: uppercase;
 		display: inline-block;
-		border: 0;
+		border: none;
+		float: right;
+	}
+	.centered {
+		/*padding: 0;*/
+	}
+	.centered h2, 
+	.centered h3 {
+		width: 100%;
+		margin: 0;
 	}
 
 /* Containers -----*/
@@ -50,11 +98,12 @@
 		margin: 0 auto;
 	}
 	.container {
-		display: block;
+		display: inline-block;
 		margin: 10px 0;
-		padding: 10px;
-		border: 2px solid #666;
-		height: 60px;
+		padding: 20px 5%;
+		/*border: 2px solid #666;*/
+		height: initial;
+		width: 90%;
 	}
 	.content-wrap {
 		display: inline-block;
@@ -62,27 +111,179 @@
 	}
 
 /* Letter Board -----*/
-	.ltr-space {
+	.ltr-board.container {
+		position: relative;
+		width: 90%;
+		padding: 0 5%;
+		min-width: initial;
+		height: 80px;
+		line-height: 80px;
+		/*text-align: center;*/
+		color: #fff;
+		background-color: #34495e;
+	}
+	.ltr-board h2 {
+		float: left;
+		margin: 0;
+		margin-right: 20px;
+		font-weight: normal;
 		font-size: 24px;
-		font-family: 'courier new','courier', monospace;
-		margin: 0 4px;
-		padding: 4px;
+	}
+	.ltr-board-wrap {
+		position: relative;
+		margin: 0;
+
+		height: inherit;
+		line-height: inherit;
+	}
+	.ltr-space {
+		font-size: 30px;
+		/*font-family: 'courier new','courier', monospace;*/
+		margin: 20px 5px;
+		padding: 5px;
 		display: inline-block;
-		width: .7em;
+		min-width: .7em;
+		width: initial;
 		height: 1em;
 		line-height: 1em;
-		border: 2px solid #666;
 		float: left;
-		/*border-bottom: 2px solid #333;*/
+		text-align: center;
+		outline: 1px solid #666;
+		background-color: #fff;
+			font-weight: bolder;
+			text-transform: uppercase;
+			color: #000;
+			font-family: 'permanent marker', courier, monospace;
+			font-family: Graduate;
+			font-family: 'Roboto Mono';
+			font-family: 'Cutive Mono';
 	}
 
-/* Wrong Letters -----*/
 
 /* Hangman Graphics -----*/
-	.hangman-img {
-		display: none;
+
+	#hangman.container {
+		height: 400px;
+		width: 100%;
+		overflow: hidden;
+		/*background-image: url(../images/3_a.svg);*/
+		/*background-size: cover;*/
+		background-color: #946c32;
+		background-color: #fff5d7;
+		padding: 0;
+		padding-top: 40px;
+	}	
+	#player-wrap {
+		width: 100%;
+		height: inherit;
+		margin-left: auto;
+		display: block;
+		position: relative;	
+	}
+	.lane {
+		width: 100%;
+		height: 80px;
+		position: relative;
+	}
+	span.lane-decoration {
+		display: inline-block;
+		position: absolute;
+		bottom: 0;
+		width: inherit;
+		height: 50%;
+		background-image: url(../images/wave1cs.svg);
+		background-size: cover;
 	}
 
+	img.lane-decoration {
+		width: inherit;
+		width: 105%;
+		position: absolute;
+		left: -10px;
+		top: 65%;
+	}
+	.lane-decoration.backing {
+		margin-top: -10px;
+	}
+
+	#lane1 .lane-decoration 	{ z-index: 7; 	}
+	#lane1 .backing			 	{ z-index: 6; 	}
+	#lane1 .char 				{ z-index: 5; 	}
+	#lane2 .lane-decoration 	{ z-index: 17; 	}
+	#lane2 .backing			 	{ z-index: 16; 	}
+	#lane2 .char 				{ z-index: 15; 	}
+	#lane3 .lane-decoration 	{ z-index: 27; 	}
+	#lane3 .backing			 	{ z-index: 26; 	}
+	#lane3 .char 				{ z-index: 25; 	}
+	#lane4 .lane-decoration 	{ z-index: 37; 	}
+	#lane4 .backing			 	{ z-index: 36; 	}
+	#lane4 .char 				{ z-index: 35; 	}
+
+
+	.char {
+		display: inline-block;
+		position: absolute;
+		height: initial;
+		width: 150px;
+	}
+	
+/* Instructions -----*/
+	.instructions.container {
+		width: 40%;
+		display: inline-block;
+	}
+
+/*Scoreboard -----*/
+	.scoreboard.container {
+		width: initial;
+		/*min-width: 100px;*/
+		/*max-width: 300px;*/
+		padding: 10px;
+		/*padding: 0;*/
+		height: initial;
+		display: inline-block;
+		background-color: #2c3e50;
+	}
+
+	.scoreboard-section {
+		width: initial;
+		/*min-width: 30px;*/
+		/*max-width: 100px;*/
+		height: initial;
+		padding: 15px 0;
+		margin: 10px;
+		display: inline-block;
+		float: left;
+		background-color: #fff;
+		color: #333;
+	}
+	.scoreboard h2 {
+		font-size: 20px;
+		font-weight: bold;
+		margin-bottom: 5px;
+	}
+	.scoreboard h3 {
+		font-size: 36px;
+		font-family: 'courier new', courier, monospace;
+		font-family: Graduate;
+	}
+
+/* Scoreboard: Strikes; -----*/
+	.strikes-left {
+		text-align: center;
+	}
+
+
+/*-------------------------------------
+	Wrong Letters 
+-------------------------------------*/
+	#wrong-ltrs {
+		font-size: 20px;
+		width: 55%;
+		float: right;
+		padding: 0 20px;
+		background-color: #e74c3c;
+	}
 
 
 
