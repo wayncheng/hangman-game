@@ -1,0 +1,91 @@
+/* Temp Outlines */
+/*.container {outline: 1px solid blue; }*/
+/*#hangman { outline: 2px solid green; }*/
+/*#ltr-board { outline: 2px solid blue; }*/
+/*#guesses-left { outline: 2px solid yellow; }*/
+/*#wrong-ltrs { outline: 2px solid red; }*/
+
+/* General Styling -----*/
+	html {
+		font-family: 'courier new','courier',monospace;
+		font-family: 'Helvetica Neue',Roboto,Helvetica, Arial, sans-serif;
+
+	}
+	#page-title {
+		font-size: 48px;
+		font-weight: bold;
+		width: 100%;
+		text-align: center;
+		font-family: 'Helvetica Neue',Helvetica, Arial, sans-serif;
+		padding: 20px;
+	}
+	h2 {
+		font-size: 18px;
+		/*font-weight: bold;*/
+		/*text-transform: uppercase;*/
+		margin: 10px 30px;
+		display: inline-block;
+	}
+	h3 {
+		display: inline-block;
+	}
+	button {
+		font-size: 24px;
+		height: 3em;
+		width: 50%;
+		margin: 0 25%;
+		background-color: #333;
+		color: #fff;
+		cursor: pointer;
+		outline: none;
+		text-transform: uppercase;
+		display: inline-block;
+		border: 0;
+	}
+
+/* Containers -----*/
+	#gbl-container {
+		width: 90%;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+	.container {
+		display: block;
+		margin: 10px 0;
+		padding: 10px;
+		border: 2px solid #666;
+		height: 60px;
+	}
+	.content-wrap {
+		display: inline-block;
+		margin-left: 20px;
+	}
+
+/* Letter Board -----*/
+	.ltr-space {
+		font-size: 24px;
+		font-family: 'courier new','courier', monospace;
+		margin: 0 4px;
+		padding: 4px;
+		display: inline-block;
+		width: .7em;
+		height: 1em;
+		line-height: 1em;
+		border: 2px solid #666;
+		float: left;
+		/*border-bottom: 2px solid #333;*/
+	}
+
+/* Wrong Letters -----*/
+
+/* Hangman Graphics -----*/
+	.hangman-img {
+		display: none;
+	}
+
+
+
+
+
+
+

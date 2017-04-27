@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bootcamp Hangman Game</title>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="">
+	<meta name="author" content="Wayne Cheng">	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/hangman.css">
+</head>
+<body>
+
+
+<div id="gbl-container">
+	<h1 id="page-title">Hangman Game</h1>
+
+	<!-- New Game Button -->
+		<button type="button" id="new-game-button">new game</button>
+
+	<!-- Hangman Graphics -->
+		<div id="hangman" class="container">
+			<h2>Hangman:</h2>
+			<img src="assets/images/1_a.svg" id="img1" class="hangman-img">
+			<img src="assets/images/2_a.svg" id="img2" class="hangman-img">
+			<img src="assets/images/3_a.svg" id="img3" class="hangman-img">
+			<img src="assets/images/4_a.svg" id="img4" class="hangman-img">
+			<img src="assets/images/5_a.svg" id="img5" class="hangman-img">
+			<img src="assets/images/6_a.svg" id="img6" class="hangman-img">
+		</div>
+
+	<!-- guesses left counter -->
+		<div id="strikes-left" class="container">
+			<h2>Strikes Left:</h2>
+			<div class="content-wrap">
+				<h3 id="strike-counter"></h3>
+			</div>
+		</div>
+
+	<!-- letter board -->
+		<div id="ltr-board" class="container">
+			<h2>Letter Board:</h2>
+			<div id="ltr-board-wrap" class="content-wrap"></div>
+		</div>
+
+
+	<!-- Wrong Letters -->
+		<div id="wrong-ltrs" class="container">
+			<h2>Wrong Guesses:</h2>
+			<div id="wrong-ltr-wrap" class="content-wrap"></div>
+		</div>
+
+
+ </div> <!-- end gbl-container -->
+
+ <!-- SCRIPTS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="assets/javascript/game.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
