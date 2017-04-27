@@ -1,6 +1,10 @@
 /* Temp Outlines */
 /*.container {outline: 1px solid blue; }*/
-/*#hangman { outline: 2px solid green; }*/
+/*#hangman { outline: 10px solid yellow; }*/
+/*#player-wrap { outline: 2px solid red; }*/
+/*.lane { outline: 2px solid blue; }*/
+
+
 /*#ltr-board { outline: 2px solid blue; }*/
 /*#guesses-left { outline: 2px solid yellow; }*/
 /*#wrong-ltrs { outline: 2px solid red; }*/
@@ -47,11 +51,19 @@
 	}
 	.subheadline {
 		font-size: 24px;
+		line-height: 1.2em;
 		font-family: 'cutive mono';
-		width: 60%;
+		width: 80%;
 		margin: 0;
 		text-align: left;
 		display: inline-block;
+	}
+	h3.subheadline {
+		font-style: italic;
+		text-decoration: underline;
+		font-size: 24px;
+		margin-top: 10px;
+		color: #e74c3c;
 	}
 	h2 {
 		font-size: 18px;
@@ -93,12 +105,13 @@
 
 /* Containers -----*/
 	#gbl-container {
-		width: 90%;
-		max-width: 800px;
+		width: 100%;
+		min-width: 400px;
 		margin: 0 auto;
 	}
 	.container {
 		display: inline-block;
+		position: relative;
 		margin: 10px 0;
 		padding: 20px 5%;
 		/*border: 2px solid #666;*/
@@ -108,6 +121,11 @@
 	.content-wrap {
 		display: inline-block;
 		margin-left: 20px;
+	}
+	div.container.bound {
+		display: block;
+		width: 60%;
+		margin: 0 auto;
 	}
 
 /* Letter Board -----*/
@@ -120,7 +138,7 @@
 		line-height: 80px;
 		/*text-align: center;*/
 		color: #fff;
-		background-color: #34495e;
+		background-color: #795548;
 	}
 	.ltr-board h2 {
 		float: left;
@@ -163,15 +181,19 @@
 /* Hangman Graphics -----*/
 
 	#hangman.container {
-		height: 400px;
+		height: initial;
+		min-height: 400px;
 		width: 100%;
 		overflow: hidden;
-		/*background-image: url(../images/3_a.svg);*/
-		/*background-size: cover;*/
-		background-color: #946c32;
-		background-color: #fff5d7;
 		padding: 0;
-		padding-top: 40px;
+		/*padding-top: 40px;*/
+		padding-bottom: 80px;
+		margin: 50px 0;
+			/*background-color: #00897B;*/
+			/*background-color: #AFB42B;*/
+			/*background-color: #0288D1;*/
+			/*background-color: #00796B;*/
+			/*background-color: #00838F;*/
 	}	
 	#player-wrap {
 		width: 100%;
@@ -182,49 +204,81 @@
 	}
 	.lane {
 		width: 100%;
-		height: 80px;
+		height: 100px;
 		position: relative;
 	}
-	span.lane-decoration {
+
+	img.ln-decor {
+		width: inherit;
+		width: 110%;
+		position: absolute;
+		left: -5%;
+		top: 50px;
+	}
+	img.flag {
+		height: 100px;
+		width: initial;
+		position: absolute;
+	}
+	#start-flag { 
+		left: 15%;
+		margin-left: -10px; 
+	}
+	#finish-flag { 
+		left: 85%;
+		margin-left: -50px; 
+	}
+
+	#track-bound {
+		position: absolute;
+		width: 70%;
+		margin: 0 auto;
+		margin-left: 15%;
 		display: inline-block;
+		/*outline: 4px solid red;*/
+		height: 100%;
+		z-index: 100;
+		/*background-color: yellow;*/
+		/*opacity: .2;*/
+		/*border-left: 2px dashed green;*/
+		/*border-right: 2px dashed red;*/
+	}
+
+	.track-bumper {
 		position: absolute;
-		bottom: 0;
-		width: inherit;
-		height: 50%;
-		background-image: url(../images/wave1cs.svg);
-		background-size: cover;
+		width: 15%;
+		display: inline-block;
+		height: 100%;
+		z-index: 100;
+		background-color: #666;
+		opacity: .1;
 	}
+	#bumper1 { left: 0; }
+	#bumper2 { right: 0; }
+	
+	/* Z-indexes*/
+		#lane0 .ln-decor 	{ z-index: 3; 	}
+		#lane1 .ln-decor 	{ z-index: 7; 	}
+		#lane2 .ln-decor 	{ z-index: 17; 	}
+		#lane3 .ln-decor 	{ z-index: 27; 	}
+		#lane4 .ln-decor 	{ z-index: 37; 	}
+		
+		#lane1 .char 	{ z-index: 5; 	}
+		#lane2 .char 	{ z-index: 15; 	}
+		#lane3 .char 	{ z-index: 25; 	}
+		#lane4 .char 	{ z-index: 35; 	}
 
-	img.lane-decoration {
-		width: inherit;
-		width: 105%;
-		position: absolute;
-		left: -10px;
-		top: 65%;
-	}
-	.lane-decoration.backing {
-		margin-top: -10px;
-	}
-
-	#lane1 .lane-decoration 	{ z-index: 7; 	}
-	#lane1 .backing			 	{ z-index: 6; 	}
-	#lane1 .char 				{ z-index: 5; 	}
-	#lane2 .lane-decoration 	{ z-index: 17; 	}
-	#lane2 .backing			 	{ z-index: 16; 	}
-	#lane2 .char 				{ z-index: 15; 	}
-	#lane3 .lane-decoration 	{ z-index: 27; 	}
-	#lane3 .backing			 	{ z-index: 26; 	}
-	#lane3 .char 				{ z-index: 25; 	}
-	#lane4 .lane-decoration 	{ z-index: 37; 	}
-	#lane4 .backing			 	{ z-index: 36; 	}
-	#lane4 .char 				{ z-index: 35; 	}
-
+		#lane1 .backing		{ z-index: 6; 	}
+		#lane2 .backing		{ z-index: 16; 	}
+		#lane3 .backing		{ z-index: 26; 	}
+		#lane4 .backing		{ z-index: 36; 	}
 
 	.char {
 		display: inline-block;
 		position: absolute;
 		height: initial;
-		width: 150px;
+		width: 140px;
+		margin-left: -140px;
 	}
 	
 /* Instructions -----*/
@@ -275,11 +329,18 @@
 
 
 /*-------------------------------------
+	SECTION: Scores, Wrong Letters 
+-------------------------------------*/
+	.section-wrap {
+		width: 70%;
+		margin: 20px auto;
+	}
+/*-------------------------------------
 	Wrong Letters 
 -------------------------------------*/
 	#wrong-ltrs {
 		font-size: 20px;
-		width: 55%;
+		width: 60%;
 		float: right;
 		padding: 0 20px;
 		background-color: #e74c3c;

@@ -1,26 +1,28 @@
 $(document).ready(function (){
 
-// Select a random word from a collection of words
-// to use as the key.
-	var keyHard = ['abruptly', 'absurd', 'abyss', 'affix', 'askew', 'avenue', 'awkward', 'axiom', 'azure', 'bagpipes', 'bandwagon', 'banjo', 'bayou', 'beekeeper', 'bikini', 'blitz', 'blizzard', 'boggle', 'bookworm', 'boxcar', 'boxful', 'buckaroo', 'buffalo', 'buffoon', 'buxom', 'buzzard', 'buzzing', 'buzzwords', 'caliph', 'cobweb', 'cockiness', 'croquet', 'crypt', 'curacao', 'cycle', 'daiquiri', 'dirndl', 'disavow', 'dizzying', 'duplex', 'dwarves', 'embezzle', 'equip', 'espionage', 'euouae', 'exodus', 'faking', 'fishhook', 'fixable', 'fjord', 'flapjack', 'flopping', 'fluffiness', 'flyby', 'foxglove', 'frazzled', 'frizzled', 'fuchsia', 'funny', 'gabby', 'galaxy', 'galvanize', 'gazebo', 'giaour', 'gizmo', 'glowworm', 'glyph', 'gnarly', 'gnostic', 'gossip', 'grogginess', 'haiku', 'haphazard', 'hyphen', 'iatrogenic', 'icebox', 'injury', 'ivory', 'ivy', 'jackpot', 'jaundice', 'jawbreaker', 'jaywalk', 'jazziest', 'jazzy', 'jelly', 'jigsaw', 'jinx', 'jiujitsu', 'jockey', 'jogging', 'joking', 'jovial', 'joyful', 'juicy', 'jukebox', 'jumbo', 'kayak', 'kazoo', 'keyhole', 'khaki', 'kilobyte', 'kiosk', 'kitsch', 'kiwifruit', 'klutz', 'knapsack', 'larynx', 'lengths', 'lucky', 'luxury', 'lymph', 'marquis', 'matrix', 'megahertz', 'microwave', 'mnemonic', 'mystify', 'naphtha', 'nightclub', 'nowadays', 'numbskull', 'nymph', 'onyx', 'ovary', 'oxidize', 'oxygen', 'pajama', 'peekaboo', 'phlegm', 'pixel', 'pizazz', 'pneumonia', 'polka', 'pshaw', 'psyche', 'puppy', 'puzzling', 'quartz', 'queue', 'quips', 'quixotic', 'quiz', 'quizzes', 'quorum', 'razzmatazz', 'rhubarb', 'rhythm', 'rickshaw', 'schnapps', 'scratch', 'shiv', 'snazzy', 'sphinx', 'spritz', 'squawk', 'staff', 'strength', 'strengths', 'stretch', 'stronghold', 'stymied', 'subway', 'swivel', 'syndrome', 'thriftless', 'thumbscrew', 'topaz', 'transcript', 'transgress', 'transplant', 'triphthong', 'twelfth', 'twelfths', 'unknown', 'unworthy', 'unzip', 'uptown', 'vaporize', 'vixen', 'vodka', 'voodoo', 'vortex', 'voyeurism', 'walkway', 'waltz', 'wave', 'wavy', 'waxy', 'wellspring', 'wheezy', 'whiskey', 'whizzing', 'whomever', 'wimpy', 'witchcraft', 'wizard', 'woozy', 'wristwatch', 'wyvern', 'xylophone', 'yachtsman', 'yippee', 'yoked', 'youthful', 'yummy', 'zephyr', 'zigzag', 'zigzagging', 'zilch', 'zipper', 'zodiac', 'zombie'];
-	var keyMedium = ['acres', 'adult', 'advice', 'arrangement', 'attempt', 'August', 'Autumn', 'border', 'breeze', 'brick', 'calm', 'canal', 'Casey', 'cast', 'chose', 'claws', 'coach', 'constantly', 'contrast', 'cookies', 'customs', 'damage', 'Danny', 'deeply', 'depth', 'discussion', 'doll', 'donkey', 'Egypt', 'Ellen', 'essential', 'exchange', 'exist', 'explanation', 'facing', 'film', 'finest', 'fireplace', 'floating', 'folks', 'fort', 'garage', 'grabbed', 'grandmother', 'habit', 'happily', 'Harry', 'heading', 'hunter', 'Illinois', 'image', 'independent', 'instant', 'January', 'kids', 'label', 'Lee', 'lungs', 'manufacturing', 'Martin', 'mathematics', 'melted', 'memory', 'mill', 'mission', 'monkey', 'Mount', 'mysterious', 'neighborhood', 'Norway', 'nuts', 'occasionally', 'official', 'ourselves', 'palace', 'Pennsylvania', 'Philadelphia', 'plates', 'poetry', 'policeman', 'positive', 'possibly', 'practical', 'pride', 'promised', 'recall', 'relationship', 'remarkable', 'require', 'rhyme', 'rocky', 'rubbed', 'rush', 'sale', 'satellites', 'satisfied', 'scared', 'selection', 'shake', 'shaking', 'shallow', 'shout', 'silly', 'simplest', 'slight', 'slip', 'slope', 'soap', 'solar', 'species', 'spin', 'stiff', 'swung', 'tales', 'thumb', 'tobacco', 'toy', 'trap', 'treated', 'tune', 'university', 'vapor', 'vessels', 'wealth', 'wolf', 'zoo'];
+// Word Bank Arrays	
+	// var keyMedSrc = ['acres', 'adult', 'advice', 'arrangement', 'attempt', 'August', 'Autumn', 'border', 'breeze', 'brick', 'calm', 'canal', 'cast', 'chose', 'claws', 'coach', 'constantly', 'contrast', 'cookies', 'customs', 'damage', 'Danny', 'deeply', 'depth', 'discussion', 'doll', 'donkey', 'Egypt', 'essential', 'exchange', 'exist', 'explanation', 'facing', 'film', 'finest', 'fireplace', 'floating', 'folks', 'fort', 'garage', 'grabbed', 'grandmother', 'habit', 'happily', 'Harry', 'heading', 'hunter', 'Illinois', 'image', 'independent', 'instant', 'January', 'kids', 'label', 'Lee', 'lungs', 'manufacturing', 'Martin', 'mathematics', 'melted', 'memory', 'mill', 'mission', 'monkey', 'Mount', 'mysterious', 'neighborhood', 'Norway', 'nuts', 'occasionally', 'official', 'ourselves', 'palace', 'Pennsylvania', 'Philadelphia', 'plates', 'poetry', 'policeman', 'positive', 'possibly', 'practical', 'pride', 'promised', 'recall', 'relationship', 'remarkable', 'require', 'rhyme', 'rocky', 'rubbed', 'rush', 'sale', 'satellites', 'satisfied', 'scared', 'selection', 'shake', 'shaking', 'shallow', 'shout', 'silly', 'simplest', 'slight', 'slip', 'slope', 'soap', 'solar', 'species', 'spin', 'stiff', 'swung', 'tales', 'thumb', 'tobacco', 'toy', 'trap', 'treated', 'tune', 'university', 'vapor', 'vessels', 'wealth', 'wolf', 'zoo'];
+	// var keyHardSrc = ['abruptly', 'absurd', 'abyss', 'affix', 'askew', 'avenue', 'awkward', 'axiom', 'azure', 'bagpipes', 'bandwagon', 'banjo', 'bayou', 'beekeeper', 'bikini', 'blitz', 'blizzard', 'boggle', 'bookworm', 'boxcar', 'boxful', 'buckaroo', 'buffalo', 'buffoon', 'buxom', 'buzzard', 'buzzing', 'buzzwords', 'caliph', 'cobweb', 'cockiness', 'croquet', 'crypt', 'curacao', 'cycle', 'daiquiri', 'dirndl', 'disavow', 'dizzying', 'duplex', 'dwarves', 'embezzle', 'equip', 'espionage', 'euouae', 'exodus', 'faking', 'fishhook', 'fixable', 'fjord', 'flapjack', 'flopping', 'fluffiness', 'flyby', 'foxglove', 'frazzled', 'frizzled', 'fuchsia', 'funny', 'gabby', 'galaxy', 'galvanize', 'gazebo', 'giaour', 'gizmo', 'glowworm', 'glyph', 'gnarly', 'gnostic', 'gossip', 'grogginess', 'haiku', 'haphazard', 'hyphen', 'iatrogenic', 'icebox', 'injury', 'ivory', 'ivy', 'jackpot', 'jaundice', 'jawbreaker', 'jaywalk', 'jazziest', 'jazzy', 'jelly', 'jigsaw', 'jinx', 'jiujitsu', 'jockey', 'jogging', 'joking', 'jovial', 'joyful', 'juicy', 'jukebox', 'jumbo', 'kayak', 'kazoo', 'keyhole', 'khaki', 'kilobyte', 'kiosk', 'kitsch', 'kiwifruit', 'klutz', 'knapsack', 'larynx', 'lengths', 'lucky', 'luxury', 'lymph', 'marquis', 'matrix', 'megahertz', 'microwave', 'mnemonic', 'mystify', 'naphtha', 'nightclub', 'nowadays', 'numbskull', 'nymph', 'onyx', 'ovary', 'oxidize', 'oxygen', 'pajama', 'peekaboo', 'phlegm', 'pixel', 'pizazz', 'pneumonia', 'polka', 'pshaw', 'psyche', 'puppy', 'puzzling', 'quartz', 'queue', 'quips', 'quixotic', 'quiz', 'quizzes', 'quorum', 'razzmatazz', 'rhubarb', 'rhythm', 'rickshaw', 'schnapps', 'scratch', 'shiv', 'snazzy', 'sphinx', 'spritz', 'squawk', 'staff', 'strength', 'strengths', 'stretch', 'stronghold', 'stymied', 'subway', 'swivel', 'syndrome', 'thriftless', 'thumbscrew', 'topaz', 'transcript', 'transgress', 'transplant', 'triphthong', 'twelfth', 'twelfths', 'unknown', 'unworthy', 'unzip', 'uptown', 'vaporize', 'vixen', 'vodka', 'voodoo', 'vortex', 'voyeurism', 'walkway', 'waltz', 'wave', 'wavy', 'waxy', 'wellspring', 'wheezy', 'whiskey', 'whizzing', 'whomever', 'wimpy', 'witchcraft', 'wizard', 'woozy', 'wristwatch', 'wyvern', 'xylophone', 'yachtsman', 'yippee', 'yoked', 'youthful', 'yummy', 'zephyr', 'zigzag', 'zigzagging', 'zilch', 'zipper', 'zodiac', 'zombie'];
+	var key1 = ['arrangement', 'attempt', 'August', 'canal', 'cast', 'chose', 'damage', 'Danny', 'deeply', 'donkey', 'Egypt', 'essential', 'finest', 'fireplace', 'floating', 'folks', 'happily', 'hunter', 'Illinois', 'image', 'independent', 'instant', 'January', 'manufacturing', 'Martin', 'mathematics', 'monkey', 'mysterious', 'neighborhood', 'occasionally', 'palace', 'Philadelphia', 'plates', 'poetry', 'policeman', 'positive', 'possibly', 'promised', 'recall', 'rocky', 'sale', 'scared', 'shake', 'shaking', 'shallow', 'shout', 'simplest', 'slope', 'silly', 'slight', 'slip', 'solar', 'spin', 'swung', 'trap', 'university', 'vapor', 'wealth'];
+	var key2 = ['acres', 'adult', 'advice', 'Autumn', 'border', 'breeze', 'brick', 'calm', 'claws', 'coach', 'constantly', 'contrast', 'cookies', 'customs', 'depth', 'discussion', 'doll', 'exchange', 'exist', 'explanation', 'facing', 'film', 'fort', 'garage', 'grabbed', 'grandmother', 'habit', 'Harry', 'heading', 'kids', 'label', 'Lee', 'lungs', 'melted', 'memory', 'mill', 'mission', 'Mount', 'Norway', 'nuts', 'official', 'ourselves', 'Pennsylvania', 'practical', 'pride', 'relationship', 'remarkable', 'require', 'rhyme', 'rubbed', 'rush', 'satellites', 'satisfied', 'selection', 'soap', 'species', 'stiff', 'tales', 'thumb', 'tobacco', 'toy', 'treated', 'tune', 'vessels', 'wolf', 'zoo'];
+	var key3 = ['affix', 'askew', 'avenue', 'awkward', 'bagpipes', 'bandwagon', 'banjo', 'bayou', 'boggle', 'bookworm', 'boxcar', 'buffalo', 'buffoon', 'buxom', 'buzzard', 'cobweb', 'cockiness', 'croquet', 'cycle', 'daiquiri', 'dirndl', 'dwarves', 'embezzle', 'equip', 'espionage', 'exodus', 'faking', 'flapjack', 'flopping', 'frazzled', 'frizzled', 'fuchsia', 'funny', 'galaxy', 'galvanize', 'gazebo', 'gizmo', 'glowworm', 'glyph', 'gnarly', 'grogginess', 'haiku', 'haphazard', 'icebox', 'injury', 'ivory', 'ivy', 'jawbreaker', 'jaywalk', 'jazziest', 'jazzy', 'jelly', 'jiujitsu', 'jockey', 'jogging', 'joyful', 'juicy', 'kazoo', 'keyhole', 'kiosk', 'kitsch', 'knapsack', 'larynx', 'lymph', 'marquis', 'matrix', 'mnemonic', 'mystify', 'naphtha', 'nowadays', 'numbskull', 'nymph', 'oxidize', 'oxygen', 'pajama', 'phlegm', 'pixel', 'polka', 'pshaw', 'puzzling', 'quartz', 'queue', 'quizzes', 'quorum', 'razzmatazz', 'rickshaw', 'schnapps', 'scratch', 'shiv', 'sphinx', 'spritz', 'strength', 'strengths', 'stretch', 'subway', 'swivel', 'thumbscrew', 'topaz', 'transcript', 'transplant', 'triphthong', 'unknown', 'unworthy', 'unzip', 'vixen', 'vodka', 'voodoo', 'voyeurism', 'walkway', 'waltz', 'wavy', 'waxy', 'wellspring', 'whiskey', 'whizzing', 'whomever', 'witchcraft', 'wizard', 'woozy', 'yachtsman', 'yippee', 'yoked', 'zephyr', 'zigzag', 'zigzagging'];
+	var key4 = ['abruptly', 'absurd', 'abyss', 'axiom', 'azure', 'beekeeper', 'bikini', 'blitz', 'blizzard', 'boxful', 'buckaroo', 'buzzing', 'buzzwords', 'caliph', 'crypt', 'curacao', 'disavow', 'dizzying', 'duplex', 'euouae', 'fishhook', 'fixable', 'fjord', 'fluffiness', 'flyby', 'foxglove', 'gabby', 'giaour', 'gnostic', 'gossip', 'hyphen', 'iatrogenic', 'jackpot', 'jaundice', 'jigsaw', 'jinx', 'joking', 'jovial', 'jukebox', 'jumbo', 'kayak', 'khaki', 'kilobyte', 'kiwifruit', 'klutz', 'lengths', 'lucky', 'luxury', 'megahertz', 'microwave', 'nightclub', 'onyx', 'ovary', 'peekaboo', 'pizazz', 'pneumonia', 'psyche', 'puppy', 'quips', 'quixotic', 'quiz', 'rhubarb', 'rhythm', 'snazzy', 'squawk', 'staff', 'stronghold', 'stymied', 'syndrome', 'thriftless', 'transgress', 'twelfth', 'twelfths', 'uptown', 'vaporize', 'vortex', 'wave', 'wheezy', 'wimpy', 'wristwatch', 'wyvern', 'xylophone', 'youthful', 'yummy', 'zilch', 'zipper', 'zodiac', 'zombie'];
 	var keyHorse = ['horse', 'mare', 'stallion', 'thoroughbred', 'backstretch', 'bearing', 'blinkers', 'book', 'breather', 'breeze', 'chute', 'closer', 'clubhouse', 'derby', 'kentucky', 'triple', 'crown', 'preakness', 'stakes', 'furlong', 'handicap', 'homestretch', 'stretch', 'juvenille', 'length', 'maiden', 'nose', 'odds', 'pace', 'pacemaker', 'paddock', 'pacesetter', 'place', 'pole', 'post', 'quarter', 'racetrack', 'rail', 'scratch', 'stretch', 'track', 'winner', 'weight', 'belmont', 'secretariat', 'seabiscuit', 'jockey', 'rider'];
-	
-	// console.log(keyHard.length); //>>> 213
-	// console.log(keyMedium.length); //>>> 126
-	// console.log(keyHorse.length); //>>> 48
-	// var key = 'keyword';
-	// var key = 'blahblahblah';
-	// var key = 'waynecheng'
+
+
 	var key = '';
 	var keyMap = [];
 	var guessesLeft = 6;
+	var totalStrikesAllowed = guessesLeft;
 	var wrongLetters = [];
 	var correctCount = 0;
 	var allGuesses = [];
 	var winCount = 0;
-	var keyArray = keyHorse;
+	var keyArray = key1;
 	var keyArrayLength = keyArray.length;
+	var startPoint = 15;
+	var finishPoint = 85;
+
 
 // -----------------------------------------------------------
 // Random Number Generator
@@ -29,7 +31,7 @@ $(document).ready(function (){
 	  min = Math.ceil(min);
 	  max = Math.floor(max);
 	  return Math.floor(Math.random() * (max - min)) + min;
-	}
+	};
 
 
 // -----------------------------------------------------------
@@ -46,6 +48,7 @@ $(document).ready(function (){
 
 		// Set or Reset Variables
 			guessesLeft = 6;
+			totalStrikesAllowed = guessesLeft;
 			wrongLetters = [];
 			correctCount = 0;
 			allGuesses = [];
@@ -75,6 +78,11 @@ $(document).ready(function (){
 			};
 
 			console.log('keyMap',keyMap);
+
+		// Char Movement
+			$('.char').attr('pos',startPoint).css('left',startPoint+'%');
+
+
 	}; // end init()
 
 	// First initialization
@@ -91,13 +99,15 @@ $(document).ready(function (){
 // -----------------------------------------------------------
 //  Player Movement Variables
 // -----------------------------------------------------------
-	var wrapLength = $('#player-wrap').css('width');
-	var trackLength = wrapLength * 0.8;
+
+	var wrapLength = $('#player-wrap').width();
+	var trackLength = finishPoint - startPoint;
 	var keyLength = key.length;
 	// var increment = 100/key.length;
-	var increment = 70/key.length;
+	var increment = trackLength/key.length;
 
-
+	var cpuIncrement = trackLength/totalStrikesAllowed;
+	
 // -----------------------------------------------------------
 // Gameplay function
 // -----------------------------------------------------------
@@ -144,8 +154,8 @@ $(document).ready(function (){
 						// Toggle outcome to true (prevents else if from running)
 						outcome = true;
 
-						// var trackPos = (correctCount * increment) - 80;
-						// $('#user').css('left',trackPos);
+						// var userPos = (correctCount * increment) - 80;
+						// $('#user').css('left',userPos);
 
 						// End Game when all letters guessed
 						if (correctCount === keyMap.length) {
@@ -165,6 +175,8 @@ $(document).ready(function (){
 						wrongLetterHTML = '<span class="ltr-space">' + userGuess + '</span>';
 						$('#wrong-ltrs .content-wrap').append(wrongLetterHTML);
 
+						
+
 						// Reduce Guesses Left by 1, update text
 						guessesLeft = guessesLeft - 1;
 						$('#strike-counter').text(guessesLeft);
@@ -173,9 +185,44 @@ $(document).ready(function (){
 			}
 		}
 
-	// Player Movement -----------------------------------
-		var trackPos = (correctCount * increment) + '%';
-		$('#user').animate({ left: trackPos, }, 500 );
+// Player Movement -----------------------------------
+
+	// User Movement
+		var userPos = startPoint + (correctCount * increment);
+		$('#user').attr('pos',userPos).animate({ left: userPos+'%' }, 500 );
+
+	// Alpha CPU movement
+		var cpuPos = startPoint + ((totalStrikesAllowed - guessesLeft) * cpuIncrement);
+		$('#cpu1').attr('pos',cpuPos).animate({ left: cpuPos+'%' }, 500 );
+			
+	// Beta CPU movement function
+		function cpuNewPos (el){
+			var cpuRandomPct = getRandomInt(50,100)/100;
+			var cpuRandomPos = cpuPos * cpuRandomPct;
+			var cpuCurrentPos = parseFloat($(el).attr('pos'));
+			var cpuNewPos = cpuCurrentPos;
+
+			// Only update position if new pos value is larger than current
+			if ( cpuRandomPos > cpuCurrentPos) {
+				cpuNewPos = cpuRandomPos; 
+			};
+
+			// Update pos-attribute, Animate to new pos
+			$(el).attr('pos',cpuNewPos).animate({ left: cpuNewPos+'%' }, 500 );
+			
+			// console.log('cpuPos', cpuPos);
+			// console.log('cpuCurrentPos', cpuCurrentPos);
+			// console.log('cpuRandomPct', cpuRandomPct);
+			// console.log('cpuRandomPos', cpuRandomPos);
+			// console.log('cpuNewPos', cpuNewPos);
+		};
+
+	// Call functions for each beta CPU
+		cpuNewPos('#cpu2');
+		cpuNewPos('#cpu3');
+		
+
+
 
 
 	}); // --- end play

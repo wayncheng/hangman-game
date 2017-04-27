@@ -27,12 +27,14 @@
 
 
 <div id="gbl-container">
-	<h1 id="page-title">Hangman <span>( Triple Crown Edition )</span></h1>
-	<h2 class="subheadline">Guess the word to win the race! </h2>
-	<h2 class="subheadline">Press any key to start.</h2>
-
-	<!-- New Game Button -->
+	<div id="banner-container" class="container bound">
+		<h1 id="page-title">Hangman <span>( Triple Crown Edition )</span></h1>
+		<h2 class="subheadline">Guess the word to win the race! </h2>
+		<h2 class="subheadline">Win 4 in a row to complete the Triple Crown! </h2>
+		<h3 class="subheadline" >Press any key to start.</h2>
+		<!-- New Game Button -->
 		<button type="button" id="new-game-button">new game</button>
+	</div>
 
 	<!-- Instructions -->
 		<!-- <div id="instructions-container" class="container instructions">
@@ -45,71 +47,74 @@
 	<!-- Hangman Graphics -->
 		<div id="hangman" class="container">
 			<!-- <h2>Hangman:</h2> -->
+		<!-- <span id="track-bound"></span> -->
+		<span id="bumper1" class="track-bumper"></span>
+		<span id="bumper2" class="track-bumper"></span>
 
 		<!-- Players -->
 			<div id="player-wrap" class="player-wrap">
+
+				<div class="lane" id="lane0"> 
+					<img class="ln-decor" src="assets/images/waves-ds-teal-500.svg"> 
+					<img id="start-flag" class="track-decor flag checkered-flag" src="assets/images/flag-green-right.svg"> 
+					<img id="finish-flag" class="track-decor flag checkered-flag" src="assets/images/flag-red-left.svg"> 
+					</div>
+
 				<div class="lane" id="lane1">
-					<img src="assets/images/horse-red.png" id="user" class="graphic char user">
-					<!-- <span class="lane-decoration"></span> -->
-					<img class="lane-decoration" src="assets/images/wave1ds.svg"></span>
-					<!-- <img class="lane-decoration backing" src="assets/images/wave1ds.svg"></span> -->
+					<img src="assets/images/horse-blue1.png" id="user" class="graphic char user">
+					<img class="ln-decor" src="assets/images/waves-ds-teal-400.svg">
 					</div>
 
 				<div class="lane" id="lane2">
-					<img src="assets/images/horse-dark-grey.png" id="cpu1" class="graphic char cpu">
-					<!-- <span class="lane-decoration alternate"></span> -->
-					<img class="lane-decoration" src="assets/images/wave2ds.svg"></span>
-					<!-- <img class="lane-decoration backing" src="assets/images/wave2ds.svg"></span> -->
+					<img src="assets/images/horse-red1.png" id="cpu1" class="graphic char cpu">
+					<img class="ln-decor" src="assets/images/waves-ds-teal-300.svg">
 					</div>
+
 				<div class="lane" id="lane3">
-					<img src="assets/images/horse-dark-grey.png" id="cpu2" class="graphic char cpu">
-					<!-- <span class="lane-decoration"></span> -->
-					<img class="lane-decoration" src="assets/images/wave1ds.svg"></span>
-					<!-- <img class="lane-decoration backing" src="assets/images/wave1ds.svg"></span> -->
+					<img src="assets/images/horse-red2.png" id="cpu2" class="graphic char cpu">
+					<img class="ln-decor" src="assets/images/waves-ds-teal-200.svg">
 					</div>
+
 				<div class="lane" id="lane4">
-					<img src="assets/images/horse-dark-grey.png" id="cpu3" class="graphic char cpu">
-					<!-- <span class="lane-decoration alternate"></span> -->
-					<img class="lane-decoration" src="assets/images/wave2ds.svg"></span>
-					<!-- <img class="lane-decoration backing" src="assets/images/wave2ds.svg"></span> -->
+					<img src="assets/images/horse-red3.png" id="cpu3" class="graphic char cpu">
+					<img class="ln-decor" src="assets/images/waves-ds-orange-200.svg">
 					</div>
 			</div>
 		</div>
 
 	<!-- letter board -->
-		<div id="ltr-board" class="ltr-board container">
+		<div id="ltr-board" class="ltr-board container bound">
 			<h2>Scoreboard:</h2>
 			<div id="ltr-board-wrap" class="ltr-board-wrap content-wrap"> </div>
 		</div>
 
 
 
+	<div class="section-wrap">
+		<!-- Strikes left counter -->
+			<div class="container scoreboard strikes-left">
+				<div id="strikes-left" class="scoreboard-section strikes-left centered">
+					<h2>Strikes Left:</h2>
+					<h3 id="strike-counter"></h3>
+					</div>
 
-	<!-- Strikes left counter -->
-		<div class="container scoreboard strikes-left">
-			<div id="strikes-left" class="scoreboard-section strikes-left centered">
-				<h2>Strikes Left:</h2>
-				<h3 id="strike-counter"></h3>
-				</div>
-
-			<div id="win-total" class="scoreboard-section strikes-left centered">
-				<!-- <div class="content-wrap"> -->
-					<!-- <h3 id="strike-counter"></h3> -->
-				<!-- </div> -->
-				<h2>Wins: </h2>
-				<h3 id="win-counter">0</h3>
-				</div>
-		</div>
-
-
-
-	<!-- Wrong Letters -->
-		<div id="wrong-ltrs" class="ltr-board container">
-			<h2>Guesses:</h2>
-			<div id="wrong-ltr-wrap" class="ltr-board-wrap content-wrap"></div>
-		</div>
+				<div id="win-total" class="scoreboard-section strikes-left centered">
+					<!-- <div class="content-wrap"> -->
+						<!-- <h3 id="strike-counter"></h3> -->
+					<!-- </div> -->
+					<h2>Wins: </h2>
+					<h3 id="win-counter">0</h3>
+					</div>
+			</div>
 
 
+
+		<!-- Wrong Letters -->
+			<div id="wrong-ltrs" class="ltr-board container">
+				<h2>Guesses:</h2>
+				<div id="wrong-ltr-wrap" class="ltr-board-wrap content-wrap"></div>
+			</div>
+	</div>
 
  </div> <!-- end gbl-container -->
 
