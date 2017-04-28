@@ -14,13 +14,16 @@
 	<link href="https://fonts.googleapis.com/css?family=Graduate" rel="stylesheet">
 	
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre:300,300i,400,400i,700,700i" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Croissant+One" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet"> -->
 
 </head>
 <body>
@@ -28,12 +31,7 @@
 
 <div id="gbl-container">
 	<div id="banner-container" class="container bound">
-		<h1 id="page-title">Hangman <span>( Triple Crown Edition )</span></h1>
-		<h2 class="subheadline">Guess the word to win the race! </h2>
-		<h2 class="subheadline">Win 4 in a row to complete the Triple Crown! </h2>
-		<h3 class="subheadline" >Press any key to start.</h2>
-		<!-- New Game Button -->
-		<button type="button" id="new-game-button">new game</button>
+		<h1 id="page-title">Hangman <span>Triple Crown Edition</span></h1>
 	</div>
 
 	<!-- Instructions -->
@@ -43,6 +41,46 @@
 			<p>- Press any key to start!</p>
 		</div> -->
 
+	<!-- letter board -->
+		<div id="ltr-board" class="ltr-board container bound">
+			
+			<!-- Billboard Image -->
+			<img id="billboard-img" src="assets/images/billboard-v2.1.svg">
+			
+			<!-- Letter Board -->
+			<div id="ltr-board-wrap" class="ltr-board-wrap content-wrap"> </div>
+			
+			<!-- Wrong Letters -->
+			<div id="wrong-ltrs" class="ltr-board">
+				<h2 class="scoreboard-text">Wrong Guesses</h2>
+				<div id="wrong-ltr-wrap" class="ltr-board-wrap content-wrap"></div>
+				</div>
+
+			<!-- Strikes & Wins -->
+			<div class="container scoreboard">
+				<!-- Strikes Left -->
+				<div id="strikes-left" class="scoreboard-section">
+					<h2 class="scoreboard-text">Strikes Left</h2>
+					<h3 id="strike-counter"></h3>
+					</div>
+				<!-- Win Streak -->
+				<div id="win-total" class="scoreboard-section">
+					<h2 class="scoreboard-text">Wins</h2>
+					<h3 id="win-counter">0</h3>
+					</div>
+				</div>
+
+			<!-- New Game Button -->
+			<img id="new-game-button" src="assets/images/newgame-rbn-medium.svg">
+			
+			<!-- Text Wrap -->
+			<div id="text-wrap" class="container">
+				<h3 class="subheadline">Guess the word to win the race! </h3>
+				<h3 class="subheadline">Win 4 in a row to complete the Triple Crown! </h3>
+				<p class="subheadline" >Press any key to start.</p>				
+			</div>
+
+		</div>
 
 	<!-- Hangman Graphics -->
 		<div id="hangman" class="container">
@@ -61,7 +99,7 @@
 					</div>
 
 				<div class="lane" id="lane1">
-					<img src="assets/images/horse-blue1.png" id="user" class="graphic char user">
+					<img src="assets/images/horse-red1.png" id="cpu3" class="graphic char cpu">
 					<img class="ln-decor" src="assets/images/waves-ds-teal-400.svg">
 					</div>
 
@@ -76,44 +114,15 @@
 					</div>
 
 				<div class="lane" id="lane4">
-					<img src="assets/images/horse-red3.png" id="cpu3" class="graphic char cpu">
+					<img src="assets/images/horse-blue3.png" id="user" class="graphic char user">
 					<img class="ln-decor" src="assets/images/waves-ds-orange-200.svg">
 					</div>
 			</div>
 		</div>
 
-	<!-- letter board -->
-		<div id="ltr-board" class="ltr-board container bound">
-			<h2>Scoreboard:</h2>
-			<div id="ltr-board-wrap" class="ltr-board-wrap content-wrap"> </div>
-		</div>
 
-
-
-	<div class="section-wrap">
-		<!-- Strikes left counter -->
-			<div class="container scoreboard strikes-left">
-				<div id="strikes-left" class="scoreboard-section strikes-left centered">
-					<h2>Strikes Left:</h2>
-					<h3 id="strike-counter"></h3>
-					</div>
-
-				<div id="win-total" class="scoreboard-section strikes-left centered">
-					<!-- <div class="content-wrap"> -->
-						<!-- <h3 id="strike-counter"></h3> -->
-					<!-- </div> -->
-					<h2>Wins: </h2>
-					<h3 id="win-counter">0</h3>
-					</div>
-			</div>
-
-
-
-		<!-- Wrong Letters -->
-			<div id="wrong-ltrs" class="ltr-board container">
-				<h2>Guesses:</h2>
-				<div id="wrong-ltr-wrap" class="ltr-board-wrap content-wrap"></div>
-			</div>
+	<div class="section-wrap race-name">
+		<h2 id="race-name"></h2>
 	</div>
 
  </div> <!-- end gbl-container -->
