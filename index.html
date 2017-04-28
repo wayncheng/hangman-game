@@ -8,23 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/hangman.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Graduate" rel="stylesheet">
-	
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Croissant+One" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
-	<!-- <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet"> -->
-
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Cutive+Mono|Graduate|Oswald|Noto+Serif:400,400i,700,700i|Libre+Baskerville:400,400i,700" rel="stylesheet">
 </head>
 <body>
 
@@ -32,14 +16,8 @@
 <div id="gbl-container">
 	<div id="banner-container" class="container bound">
 		<h1 id="page-title">Hangman <span>Triple Crown Edition</span></h1>
+		<h3 class="subheadline">Guess the word before your opponents to win the race!<br> Win 4 races in a row to claim the Triple Crown! <br><span>Press any key to start.</span></h3>
 	</div>
-
-	<!-- Instructions -->
-		<!-- <div id="instructions-container" class="container instructions">
-			<h2>How to Play:</h2>
-			<h3>Guess the word to win the Triple Crown!</h3>
-			<p>- Press any key to start!</p>
-		</div> -->
 
 	<!-- letter board -->
 		<div id="ltr-board" class="ltr-board container bound">
@@ -73,11 +51,9 @@
 			<!-- New Game Button -->
 			<img id="new-game-button" src="assets/images/newgame-rbn-medium.svg">
 			
-			<!-- Text Wrap -->
-			<div id="text-wrap" class="container">
-				<h3 class="subheadline">Guess the word to win the race! </h3>
-				<h3 class="subheadline">Win 4 in a row to complete the Triple Crown! </h3>
-				<p class="subheadline" >Press any key to start.</p>				
+			<!-- Race Name -->
+			<div class="container section-wrap race-name">
+				<h2 id="race-name"></h2>			
 			</div>
 
 		</div>
@@ -95,35 +71,31 @@
 				<div class="lane" id="lane0"> 
 					<img class="ln-decor" src="assets/images/waves-ds-teal-500.svg"> 
 					<img id="start-flag" class="track-decor flag checkered-flag" src="assets/images/flag-green-right.svg"> 
-					<img id="finish-flag" class="track-decor flag checkered-flag" src="assets/images/flag-red-left.svg"> 
+					<img id="finish-flag" class="track-decor flag checkered-flag" src="assets/images/flag-red-right.svg"> 
 					</div>
 
 				<div class="lane" id="lane1">
-					<img src="assets/images/horse-red1.png" id="cpu3" class="graphic char cpu">
+					<img src="assets/images/horse-red1.svg" id="cpu3" class="graphic char cpu">
 					<img class="ln-decor" src="assets/images/waves-ds-teal-400.svg">
 					</div>
 
 				<div class="lane" id="lane2">
-					<img src="assets/images/horse-red1.png" id="cpu1" class="graphic char cpu">
+					<img src="assets/images/horse-red1.svg" id="cpu1" class="graphic char cpu">
 					<img class="ln-decor" src="assets/images/waves-ds-teal-300.svg">
 					</div>
 
 				<div class="lane" id="lane3">
-					<img src="assets/images/horse-red2.png" id="cpu2" class="graphic char cpu">
+					<img src="assets/images/horse-red2.svg" id="cpu2" class="graphic char cpu">
 					<img class="ln-decor" src="assets/images/waves-ds-teal-200.svg">
 					</div>
 
 				<div class="lane" id="lane4">
-					<img src="assets/images/horse-blue3.png" id="user" class="graphic char user">
+					<img src="assets/images/horse-blue3.svg" id="user" class="graphic char user">
 					<img class="ln-decor" src="assets/images/waves-ds-orange-200.svg">
 					</div>
 			</div>
 		</div>
 
-
-	<div class="section-wrap race-name">
-		<h2 id="race-name"></h2>
-	</div>
 
  </div> <!-- end gbl-container -->
 

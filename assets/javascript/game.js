@@ -31,8 +31,9 @@ $(document).ready(function (){
 	var increment = trackLength/key.length;
 	var cpuIncrement = trackLength/totalStrikesAllowed;		
 
-	var races = ['Qualifying Race at Del Mar Fairgrounds', 'Kentucky Derby', 'Preakness Stakes', 'Belmont Stakes'];
+	var races = ['Qualifiers at Del Mar', 'Kentucky Derby', 'Preakness Stakes', 'Belmont Stakes'];
 	var race = 1;
+	var triplecrown = false;
 
 // -----------------------------------------------------------
 // Random Number Generator
@@ -52,21 +53,33 @@ $(document).ready(function (){
 		//-----------------------------------------------------------
 		// Select Array  
 		//-----------------------------------------------------------
-			if (race === 1) { keyArray = key1 }
-			else if (race ===2 ) { keyArray = key2}
-			else if (race ===3 ) { keyArray = key3}
-			else if (race ===4 ) { keyArray = key4}
-			else { keyArray = keyHorse;}
-
-			console.log(keyArray);
-
+			if (race === 1) { 
+				keyArray = key1;
+			}
+			else if (race ===2 ) {
+				keyArray = key2;
+				$('#lane4 .ln-decor').attr('src','assets/images/waves-ds-pink-200.svg');
+			}
+			else if (race ===3 ) {
+				keyArray = key3;
+				$('#lane4 .ln-decor').attr('src','assets/images/waves-ds-yellow-200.svg');
+			}
+			else if (race ===4 ) {
+				keyArray = key4;
+				$('#lane4 .ln-decor').attr('src','assets/images/waves-ds-red-200.svg');
+			}
+			else { 
+				keyArray = key4;
+				triplecrown = true;
+				$('#lane4 .ln-decor').attr('src','assets/images/waves-ds-purple-200.svg');
+			}
 
 		//-----------------------------------------------------------
 		// Pick a word 
 		//-----------------------------------------------------------
 		var keyIndex = getRandomInt(0,keyArrayLength);
 		key = keyArray[keyIndex].toLowerCase();
-		console.log(keyIndex, keyArray[keyIndex]);
+		console.log('cheat',keyArray[keyIndex]);
 
 		//-----------------------------------------------------------
 		// Set or Reset Variables
@@ -113,8 +126,8 @@ $(document).ready(function (){
 				keyMap.push(key[i]);
 			};
 
-			console.log('keyMap',keyMap);
-			console.log('keyMapLength', keyMap.length);
+			// console.log('keyMap',keyMap);
+			// console.log('keyMapLength', keyMap.length);
 
 		//  Player Movement Variables
 			wrapLength = $('#player-wrap').width();
@@ -130,7 +143,11 @@ $(document).ready(function (){
 
 		// Update Race Name
 			var raceName = races[race-1];
-			$('#race-name').text('Race '+race+': '+raceName);
+			$('#race-name').html('<span>Race '+race+':</span> <br>'+raceName);
+			
+			if (triplecrown === true) {
+				$('#race-name').html('<span>Congrats!</span> <br> You won the Triple Crown!');
+			}
 
 	}; ////////////////////////// end init ////////////////////////////////////////////////
 	
@@ -193,7 +210,6 @@ $(document).ready(function (){
 
 							// Increase the count of correct letters
 							correctCount += 1;
-							console.log(correctCount);
 
 							// Toggle outcome to true (prevents else if from running)
 							outcome = true;	
@@ -220,7 +236,6 @@ $(document).ready(function (){
 							$(targetID).text(userGuess).removeClass('inactive');
 
 							
-
 							// Reduce Guesses Left by 1, update text
 							guessesLeft = guessesLeft - 1;
 							$('#strike-counter').text(guessesLeft);
@@ -262,21 +277,12 @@ $(document).ready(function (){
 			// Update pos-attribute, Animate to new pos
 			$(el).attr('pos',cpuNewPos).animate({ left: cpuNewPos+'%' }, 500 );
 			
-			// console.log('cpuPos', cpuPos);
-			// console.log('cpuCurrentPos', cpuCurrentPos);
-			// console.log('cpuRandomPct', cpuRandomPct);
-			// console.log('cpuRandomPos', cpuRandomPos);
-			// console.log('cpuNewPos', cpuNewPos);
 		};
 
 	// Call functions for each beta CPU
 		cpuNewPos('#cpu2');
 		cpuNewPos('#cpu3');
 		
-
-
-
-
 	}); // --- end play
 
 
