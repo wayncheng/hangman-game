@@ -79,7 +79,7 @@ $(document).ready(function (){
 		//-----------------------------------------------------------
 		var keyIndex = getRandomInt(0,keyArrayLength);
 		key = keyArray[keyIndex].toLowerCase();
-		console.log('cheat',keyArray[keyIndex]);
+		// console.log('cheat',keyArray[keyIndex]);
 
 		//-----------------------------------------------------------
 		// Set or Reset Variables
