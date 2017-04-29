@@ -31,7 +31,7 @@ $(document).ready(function (){
 	var increment = trackLength/key.length;
 	var cpuIncrement = trackLength/totalStrikesAllowed;		
 
-	var races = ['Qualifiers at Del Mar', 'Kentucky Derby', 'Preakness Stakes', 'Belmont Stakes'];
+	var races = ['Qualifier at Del Mar', 'Kentucky Derby', 'Preakness Stakes', 'Belmont Stakes'];
 	var race = 1;
 	var triplecrown = false;
 
@@ -143,10 +143,11 @@ $(document).ready(function (){
 
 		// Update Race Name
 			var raceName = races[race-1];
-			$('#race-name').html('<span>Race '+race+':</span> <br>'+raceName);
+			// $('#race-name').html('<span>Race '+race+':</span> <br>'+raceName);
+			$('#race-name').html('<span>Race '+race+':</span> '+raceName);
 			
 			if (triplecrown === true) {
-				$('#race-name').html('<span>Congrats!</span> <br> You won the Triple Crown!');
+				$('#race-name').html('<span>Congrats!</span> You won the Triple Crown!');
 			}
 
 	}; ////////////////////////// end init ////////////////////////////////////////////////
@@ -220,7 +221,9 @@ $(document).ready(function (){
 									winCount += 1;
 									race += 1;
 									$('#win-counter').text(winCount);
-									// init();
+									$('#race-name').text('You won!!!');
+
+									setTimeout(init, 1000);
 								}
 						}
 
@@ -245,7 +248,9 @@ $(document).ready(function (){
 								console.log('---- You Lost! ----');
 								winCount = 0;
 								race = 1;
-								init();
+								$('#race-name').text('You lost... maybe next time');
+
+								setTimeout(init, 1000);
 							}
 
 						}
@@ -256,11 +261,11 @@ $(document).ready(function (){
 
 	// User Movement
 		var userPos = startPoint + (correctCount * increment);
-		$('#user').attr('pos',userPos).animate({ left: userPos+'%' }, 500 );
+		$('#user').attr('pos',userPos).animate({ left: userPos+'%' }, 300 );
 
 	// Alpha CPU movement
 		var cpuPos = startPoint + ((totalStrikesAllowed - guessesLeft) * cpuIncrement);
-		$('#cpu1').attr('pos',cpuPos).animate({ left: cpuPos+'%' }, 500 );
+		$('#cpu1').attr('pos',cpuPos).animate({ left: cpuPos+'%' }, 300 );
 			
 	// Beta CPU movement function
 		function cpuNewPos (el){
@@ -275,7 +280,7 @@ $(document).ready(function (){
 			};
 
 			// Update pos-attribute, Animate to new pos
-			$(el).attr('pos',cpuNewPos).animate({ left: cpuNewPos+'%' }, 500 );
+			$(el).attr('pos',cpuNewPos).animate({ left: cpuNewPos+'%' }, 300 );
 			
 		};
 

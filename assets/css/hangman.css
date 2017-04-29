@@ -1,42 +1,136 @@
 
+
+/* Clearfix --------------------------------------------------*/
+	.cf:before, .cf:after {content: " "; display: table; }
+	.cf:after {clear: both; }
+	.cf {*zoom: 1; }
+
 /* General Styling -----*/
 	html {
 		font-family: Roboto,'Helvetica Neue',Arial,sans-serif;
+		min-width: 900px;
+	}
+	body{ 
+		background-color: #FFE0B2;
+		background-color: #FFECB3;
+		background-color: #A5D6A7;
+		background-color: #D7CCC8;
+		background-color: #FFF9C4;
+		background-color: #CFD8DC;
+		background-color: #78909C;
+		background-color: #607D8B;
+		background-color: #546E7A;
+		background-color: #DD2C00;
+		background-color: #2c3e50;
+		background-color: #34495e;
+	}
+	#banner-container {
+		width: 80%;
+		max-width: 1000px;
+		padding: 0;
+		padding-bottom: 20px;
+		min-height: 200px;
 	}
 	#page-title {
-		font-size: 70px;
+		font-size: 60px;
 		height: .8em;
 		line-height: .8em;
 		width: 84%;
-		min-width: 830px;
-		margin: 30px auto;
+		/*min-width: 830px;*/
+		margin: 0 auto;
 		text-align: center;
 		font-family: Roboto; 
 		font-weight: 900;
 		letter-spacing: -1px;
-		padding: 0;
+		margin: 30px 0;
 		text-transform: uppercase;
 		/*margin-bottom: 30px;*/
 		display: block;
 		text-align: center;
+			display: inline-block;
+			/*width: 40%;*/
+			max-width: initial;
+			text-align: left;
+			min-width: 320px;
+			width: 320px;
 	}
 	#page-title span {
 		display: inline-block;
-		font-size: 30px;
 		text-transform: none;
-		font-weight: normal;
-		font-family: 'rock salt';
 		color: #e74c3c;
 		width: initial;
 		height: inherit;
 		line-height: inherit;
 		margin-left: 10px;
-		font-size: 40px;
+		font-size: 30px;
+		line-height: 1em;
 		letter-spacing: 1px;
-		font-family: 'noto serif', serif;
-		font-style: italic;
+		/*font-family: 'rock salt';*/
+		/*font-family: 'noto serif', serif;*/
+		font-family: 'roboto slab', serif;
+			font-weight: 400;
+			display: block;
+			/*width: 100%;*/
+			margin: 0;
 	}
-	h2 {
+	.subheadline {
+		font-size: 21px;
+		line-height: 1.2em;
+		width: 50%;
+		margin: 0;
+		text-align: center;
+		display: block;
+		font-family: 'noto serif', serif;
+		font-family: 'Roboto', serif;
+		color: #333;
+		font-style: normal;
+		margin-bottom: 40px;
+		
+		display: inline-block;
+		float: right;
+		margin: 0;
+		margin-top: 30px;
+	}
+	.subheadline span {
+		font-style: italic;
+		text-decoration: underline;
+		color: #e74c3c;
+	}
+/* Race Name */
+	.section-wrap.race-name {
+		margin: 0 auto;
+		width: 300px;
+		width: 200px;
+		position: absolute;
+		left: -250px;
+		top: 20px;
+		display: inline-block;
+	}
+
+	#race-name {
+		font-size: 40px;
+		width: 100%;
+		text-align: center;
+		display: block;
+		position: relative;
+		margin: 0 auto;
+		height: 1em;
+		line-height: 1.2em;
+		padding:0;
+		font-family: 'roboto slab', serif;
+		font-weight: 100;
+		color: #333;
+		clear: both;
+			position: absolute;
+			bottom: 20px;
+	}
+	
+	#race-name span {
+		font-weight: 700;
+		/*text-decoration: underline;*/
+	}
+
+	/*h2 {
 		font-size: 18px;
 		margin: 10px 30px;
 		display: inline-block;
@@ -44,13 +138,14 @@
 	}
 	h3 {
 		display: inline-block;
-	}
+	}*/
 
 /* Containers -----*/
 	#gbl-container {
 		width: 100%;
 		min-width: 400px;
 		margin: 0 auto;
+		background-color: #fff;
 	}
 	.container {
 		display: inline-block;
@@ -86,39 +181,16 @@
 		top: 100px;
 		z-index: 0;
 	}
-/* Text Wrap -----*/
-	/*#text-wrap {
-		position: absolute;
-		left: -380px;
-		top: 50px;
-		width: 400px;
-		display: inline-block;
-	}*/
-	.subheadline {
-		font-size: 21px;
-		line-height: 1.2em;
-		width: 70%;
-		margin: 0 15%;
-		text-align: center;
-		display: block;
-		font-family: 'noto serif', serif;
-		font-family: 'Roboto', serif;
-		color: #333;
-		font-style: normal;
-		margin-bottom: 40px;
-	}
-	.subheadline span {
-		font-style: italic;
-		text-decoration: underline;
-		color: #e74c3c;
-	}
 /* Letter Board -----*/
 	.ltr-board.container {
+		display: block;
 		position: relative;
-		width: 40%;
+		/*width: 40%;*/
 		padding: 25px 50px;
-		min-width: initial;
-		max-width: 600px;
+		width: 600px;
+		margin: 0 auto;
+		/*min-width: 600px;*/
+		/*max-width: 600px;*/
 		height: 220px;
 		line-height: initial;
 		/*text-align: center;*/
@@ -136,7 +208,7 @@
 		display: block;
 		position: relative;
 		margin: 0 auto;
-		width: 550px;
+		width: 510px;
 		padding: 0 10px;
 		height: 80px;
 		line-height: inherit;
@@ -195,12 +267,7 @@
 		/*padding-top: 40px;*/
 		padding-bottom: 80px;
 		margin: 0;
-		/*margin-bottom: 20px;*/
-			/*background-color: #00897B;*/
-			/*background-color: #AFB42B;*/
-			/*background-color: #0288D1;*/
-			/*background-color: #00796B;*/
-			/*background-color: #00838F;*/
+		margin-bottom: -1px;
 	}	
 	#player-wrap {
 		width: 100%;
@@ -218,6 +285,7 @@
 	img.ln-decor {
 		width: inherit;
 		width: 110%;
+		min-width: 1500px;
 		position: absolute;
 		left: -5%;
 		top: 50px;
@@ -226,6 +294,7 @@
 		height: 100px;
 		width: initial;
 		position: absolute;
+		z-index: 2;
 	}
 	#start-flag { 
 		left: 15%;
@@ -291,14 +360,17 @@
 	}
 
 /*Scoreboard -----*/
+	/* Contains strikes and wins */
 	.scoreboard.container {
 		width: initial;
 		padding: 0px;
 		height: initial;
 		display: inline-block;
 		position: absolute;
-		left: 340px;
-		top: 120px;
+		/*left: 340px;*/
+		left: 48.5%;
+		/*top: 120px;*/
+		top: 45%;
 		margin: 0;
 		z-index: 2;
 	}
@@ -318,6 +390,7 @@
 		/*font-weight: bold;*/
 	}
 	.scoreboard h3 {
+		display: inline-block;
 		font-size: 36px;
 		font-family: Graduate;
 		padding: 10px;
@@ -352,8 +425,10 @@
 		width: 300px;
 		height: initial;
 		position: absolute;
-		top: 135px;
-		left: 40px;
+		/*top: 135px;*/
+		top: 50%;
+		/*left: 40px;*/
+		left: 7.5%;
 		z-index: 2;
 	}
 	#wrong-ltr-wrap {
@@ -374,40 +449,89 @@
 	}
 
 
-/* Race Name */
-	#race-name {
-		font-size: 36px;
+
+/*--------------------------------*/
+	.feature-details {
+		width: 80%;
+		margin: 10px auto;
+		display: block;
+		/*float: left;*/
+		position: relative;
+	}
+	.col {
+		width: 49%;
+		padding: 0;
+		margin: 0;
+		display: inline-block;
+		position: relative;
+	}
+	.col.left ul {margin-right: auto; }
+	.col.right {float: right;}
+
+	.feature-details h2 {
+		display: block;
 		width: 100%;
 		text-align: center;
-		display: block;
+		font-family: 'noto serif', serif;
+		font-weight: 900;
+		color: #fff;
+		/*color: #333;*/
+		font-size: 45px;
+		/*font-style: italic;*/
+		margin: 20px 0 50px 0;
 		position: relative;
-		margin: 0 auto;
-		height: 1em;
-		line-height: 1.2em;
-		padding: 20px 0;
-		font-family: 'Libre Baskerville', serif;
-		font-weight: normal;
+
+		font-family: 'Roboto',sans-serif;
+		font-size: 60px;
+
+			font-size: 90px;
+			letter-spacing: -1px;
+			text-transform: uppercase;
+			color: rgba(0,0,0,0.2);
+	}
+
+	ul {
+		background-color: #fff;
+		background-color: #fcfcfc;
+		background-color: #fefefe;
+		padding: 20px 50px;
+		margin: 30px 0;
+		font-size: 20px;
+		line-height: 1.1em;
+		font-family: 'cutive mono', monospace;
+			letter-spacing: -1px;
+			font-size: 24px;
+		/*font-family: 'courier new', monospace;*/
+		/*font-family: 'noto serif', serif;*/
+		/*font-family: 'Roboto', sans-serif;*/
+		/*font-family: 'Roboto Slab', serif;*/
+		font-weight: 300;
+		width: 80%;
+		display: inline-block;
+		margin: 0;
+		margin-bottom: 50px;
+	}
+	li {
+		text-indent: -23px;
+		margin: 20px 0;
+		color: #666;
+	}
+	li::before {
+		content: "-";
+		margin-right: 10px; 
+	}
+	li:first-child {
+		font-size: 1.4em;
+		font-weight: 700;
+		margin-bottom: 10px;
+		text-indent: 0;
+		margin-left: -20px;
+		font-family: 'Roboto', sans-serif;
+		letter-spacing: 0;
 		color: #333;
 	}
-	.section-wrap.race-name {
-		margin: 0 auto;
-		width: 300px;
-		width: 200px;
-		position: absolute;
-		left: -250px;
-		top: 20px;
-		display: inline-block;
-	}
-	
-	#race-name span {
-		font-weight: bold;
-		text-decoration: underline;
-		font-size: 40px;
-		line-height: 1.5em;
-	}
+	li:first-child::before { content: initial; }
 
+/*--------------------------------*/
 
-
-
-
-
+@media all and (max-width: 1000px;)

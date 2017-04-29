@@ -9,6 +9,9 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/hangman.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Cutive+Mono|Graduate|Oswald|Noto+Serif:400,400i,700,700i|Libre+Baskerville:400,400i,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+
 </head>
 <body>
 
@@ -16,11 +19,12 @@
 <div id="gbl-container">
 	<div id="banner-container" class="container bound">
 		<h1 id="page-title">Hangman <span>Triple Crown Edition</span></h1>
-		<h3 class="subheadline">Guess the word before your opponents to win the race!<br> Win 4 races in a row to claim the Triple Crown! <br><span>Press any key to start.</span></h3>
+		<h3 class="subheadline">Guess the word before your opponents to win the race! Win 4 races in a row to claim the Triple Crown! <br><span>Guess any letter to start.</span></h3>
+		<h2 id="race-name" class="cf"></h2>
 	</div>
 
 	<!-- letter board -->
-		<div id="ltr-board" class="ltr-board container bound">
+		<div id="ltr-board" class="ltr-board container">
 			
 			<!-- Billboard Image -->
 			<img id="billboard-img" src="assets/images/billboard-v2.1.svg">
@@ -95,9 +99,59 @@
 					</div>
 			</div>
 		</div>
-
-
  </div> <!-- end gbl-container -->
+
+ <div class="container feature-details">
+	 	<h2>Extra Features Detailed</h2>
+ 	<div class="col left">
+	 	
+	 	<ul>
+	 		<li>Triple Crown Mode</li>
+	 		<li>Player must win 4 races in a row to win the Triple Crown. A qualifying race at the Del Mar Fairgrounds followed by the 3 races in the Triple Crown (Kentucky Derby, Preakness Stakes, Belmont Stakes). </li>
+	 		<li>If the player loses at any point, wins reset to 0 and the player returns back to the first race. </li>
+	 		<li>Difficulty is increased for race 3 and 4. The purpose of this change is to more accurately simulate what makes the Triple Crown so challenging in the real world. Method used to increase difficulty is discussed in Keyword Selection section. </li>
+	 	</ul>
+
+	 	<ul>
+	 		<li>Keyword Selection</li>
+	 		<li>5 separate word banks of varying difficulty with around 50 to 150 words each stored in arrays. 2 of the word banks have easy/medium fairly common English words. 2 of the other banks contain words that are considered to be "the hardest words in Hangman" according to my 20 seconds of research on Google. The last word bank contains terms related to horse racing, in keeping with the theme of game. </li>
+	 		<li>During the first 2 races, keywords are selected from the 2 easy/medium arrays. For the third and fourth race, keywords are selected from the 2 "hardest" arrays. This switch is responsible for the difficulty increase in Triple Crown Mode. </li>
+	 		<li>Once the appropriate array is chosen, the keyword is selected randomly from the array </li>
+	 	</ul>
+	 	<!-- Key Event Validation -->
+	 	<ul>
+	 		<li>Key Event Validation</li>
+	 		<li>Checks that the key pressed is an actual letter and not something like a number or symbol</li>
+	 		<li>The funciton validates using the charCode of the key pressed.</li>
+	 		<li>If the charCode is equal to or between 97 and 122, the character is validated and passed along for standard evaluation</li>
+	 		<li>Since the input is converted to lower case, any valid character will be between 97 and 122. However, if the input was not converted to lower case, you would have to include 65 through 90 as valid codes as well to accomodate uppercase letters.</li>
+	 	</ul>
+	</div>
+	<div class="col right">
+
+
+	 	<!-- User Animation -->
+	 	<ul>
+	 		<li>User Character Animation</li>
+	 		<li>In order to design as responsively as possible, the track length changes depending on screen width. As a result, all values involving widths, lengths, or positions had to be set as percentages</li>
+	 		<li>Player moves a set increment down the track for every correctly guessed letter. </li>
+			<li>Once all the letters are correctly guessed, the player will be at the finish line. </li>
+			<li>Calculated player increment by first determining the race length by subtracting the position of the finish line and the position of the starting line (in relation to the total length of the track). Then divide that number by the number of  letters in the keyword to get how far the player should travel for each correct letter, so that it will arrive at the finish line only when all letters are guessed. </li>
+	 	</ul>
+	 	<!-- CPU Animation -->
+	 	<ul>
+	 		<li>CPU Character Animation</li>
+	 		<li>The goal for the CPU animation was to have one "Alpha" character that will move in a way that it will reach the finish line before the user if the user uses up all the guesses and has not guessed the word.</li>
+			<li>All CPUs are triggered to move when a wrong letter is guessed.</li>
+	 		<li>Increment for the CPU will always be 1/n of the race length, where n equals number of strikes allowed, which in this case, is 6.</li>
+	 		<li>The "Alpha" CPU will always move to the exact increment position as determined by the number of wrong guesses. </li>
+	 		<li>The 2 "Beta" CPUs have randomized progression down the track, but will never pass the Alpha.</li>
+	 		<li>Randomized Progression by the Beta CPUs is calculated by first getting a random percentage between 50 and 100, which reprsents the Beta CPUs progression in relation to the Alpha. The percentage is then used to calculate a new proposed position of the Beta CPU in relation to the TRACK, not the Alpha.</li>
+	 		<li>In the event that a very high random percentage is followed by a very low percentage, the horse could possibly move backwards, which would be just absolute silliness since a horse would never run backwards. To prevent backwards movement, safeguards were put in place to ensure the horse only moved forward. If the new proposed position is greater than the current position, the Beta CPU accepts the new position and proceeds to move to that new position. If the new proposed position is less than the curent position, the Beta CPU will not move. (Another possible solution would be to raise the minimum random percentage value to a point where the progression of the Alpha will always be capable of compensating for any drop in percentage by the Beta. While this solution would certainly require far less code, it severely limits the amount of possible movement by the Beta CPUs. Personally, I enjoy the more dramatic movement, which is why I chose to go with the more complex method.) </li>
+	 	</ul>
+	</div>
+ 
+ </div>
 
  <!-- SCRIPTS -->
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
